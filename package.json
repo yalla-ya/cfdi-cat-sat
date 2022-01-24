@@ -1,0 +1,33 @@
+{
+  "name": "cat-cfdi-sat",
+  "version": "1.0.0",
+  "description": "CFDI Catalogs in JSON and CSV",
+  "main": "index.js",
+  "scripts": {
+    "process": "node index.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/yalla-ya/cat-cfdi-sat.git"
+  },
+  "keywords": [
+    "cfdi",
+    "cat",
+    "sat",
+    "catalog",
+    "v4",
+    "v3.3"
+  ],
+  "author": "Ido Kobelkowsky",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/yalla-ya/cat-cfdi-sat/issues"
+  },
+  "homepage": "https://github.com/yalla-ya/cat-cfdi-sat#readme",
+  "dependencies": {
+    "node-xlsx": "^0.21.0",
+    "xlsx": "^0.17.5",
+    "yargs": "^17.3.1"
+  }
+}

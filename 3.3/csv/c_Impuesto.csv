@@ -1,0 +1,4 @@
+c_Impuesto,Descripción,Retención,Traslado,Local o federal,Entidad en la que aplica
+001,ISR,Si,No,Federal,
+002,IVA,Si,Si,Federal,
+003,IEPS,Si,Si,Federal,

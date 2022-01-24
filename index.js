@@ -1,17 +1,20 @@
 #!/usr/bin/env node
 
-const XLSX = require( 'xlsx' );
-const fs = require( 'fs' );
-const yargs = require( 'yargs/yargs' )
-const { hideBin } = require( 'yargs/helpers' )
-const argv = yargs( hideBin( process.argv ) ).argv
+import decamelize from 'decamelize';
+import XLSX from 'xlsx';
+import fs from 'fs';
+import csv from 'fast-csv';
+import yargs from 'yargs'
+import { hideBin } from 'yargs/helpers';
+const argv = yargs( hideBin( process.argv ) ).argv;
+const decam = argv.decamelize ? argv.decamelize : false;
 
 var version = argv.ver ? argv.ver : "4.0";
 
 var filename = argv.in ? argv.in : null;
 if ( !filename ) {
     console.log( "Filename is required with --in filename.xls" );
-    return( 1 );
+    exit( 1 );
 } 
 
 var workbook = XLSX.readFile( version + '/catCFDI/' + filename );
@@ -119,10 +122,11 @@ function delete_rows(ws, start_row, nrows) {
 }
 
 function process_SAT_sheet( sheetName ) {
-    sheet = workbook.Sheets[ sheetName ];
-    rows = ( sheetName === 'c_RegimenFiscal' || sheetName === 'c_CodigoPostal_Parte_1' || sheetName === 'c_CodigoPostal_Parte_2' ) ? 5 : 4;
+    var sheet = workbook.Sheets[ sheetName ];
+    var rows = ( sheetName === 'c_RegimenFiscal' || sheetName === 'c_CodigoPostal_Parte_1' || sheetName === 'c_CodigoPostal_Parte_2' ) ? 5 : 4;
     delete_rows( sheet, 0, rows );
-	filename = dir + '/' + sheetName;
+	var filename = dir + '/' + ( decam ? decamelize( sheetName ) : sheetName );
+	var data = null;
 	if ( format == 'json' ) {
 		data = XLSX.utils.sheet_to_json( sheet );
 		fs.writeFileSync( filename + '.json', JSON.stringify( data ) );
@@ -132,8 +136,61 @@ function process_SAT_sheet( sheetName ) {
 	}
 }
 
+function concatCSVAndOutput(csvFilePaths, outputFilePath) {
+	const promises = csvFilePaths.map((path) => {
+		return new Promise((resolve) => {
+		const dataArray = [];
+		return csv
+			.parseFile(path, {headers: true})
+			.on('data', function(data) {
+				dataArray.push(data);
+			})
+			.on('end', function() {
+				resolve(dataArray);
+			});
+		});
+	});
+
+	return Promise.all(promises)
+		.then((results) => {
+
+			const csvStream = csv.format({headers: true});
+			const writableStream = fs.createWriteStream(outputFilePath);
+
+			writableStream.on('finish', function() {
+			console.log('DONE!');
+			});
+
+			csvStream.pipe(writableStream);
+			results.forEach((result) => {
+			result.forEach((data) => {
+				csvStream.write(data);
+			});
+			});
+			csvStream.end();
+
+		});
+}
+
 sheets.forEach( ( sheet ) => {
     console.log( 'Processing ' + sheet + ' as ' + format + '...' );
     process_SAT_sheet( sheet );
-;
+	if ( format == 'json' ) return;
+	var base = null; var joins = null;
+	if ( sheet == 'c_CodigoPostal_Parte_2' ) {
+		joins = [ 'c_CodigoPostal_Parte_1', 'c_CodigoPostal_Parte_2' ];
+		base = 'c_CodigoPostal';
+	}
+	if ( sheet == 'C_Colonia_3' ) {
+		joins = [ 'C_Colonia_1', 'C_Colonia_2', 'C_Colonia_3' ];
+		base = 'C_Colonia';
+	}
+	if ( base ) {
+		var files = [];
+		joins.forEach( ( file ) => {
+			files.push( dir + '/' + file + '.' + format );
+		} );
+		filename = dir + '/' + ( decam ? decamelize( base ) : base ) + '.' + format;
+		concatCSVAndOutput( files, filename );
+	}
 } );

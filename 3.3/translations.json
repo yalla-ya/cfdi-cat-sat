@@ -1,0 +1,106 @@
+{
+    "Nombre": "name",
+    "Descripción": "description",
+    "Nota": "comments",
+    "Símbolo": "symbol",
+
+    "FechaInicioVigencia": "start_date",
+    "Fecha inicio de vigencia": "start_date",
+    "Fecha inicio de vigencia ": "start_date",
+    "Fecha de inicio de vigencia": "start_date",
+
+    "FechaFinVigencia": "end_date",
+    "Fecha fin de vigencia": "end_date",
+    "Fecha fin de vigencia ": "end_date",
+    "Fecha de fin de vigencia": "end_date",
+    
+    "c_Aduana": "customs",
+    "Patente": "customs_code",
+    "Ejercicio": "year",
+    "Cantidad": "qty",
+
+    "C_PatenteAduanal": "customs_code",
+
+
+    "c_ClaveUnidad": "unit_code",
+
+    "c_ClaveProdServ": "product_code",
+    "Incluir IVA trasladado": "iva",
+    "Incluir IEPS trasladado": "ieps",
+    "Complemento que debe incluir": "complement",
+    "Estímulo Franja Fronteriza": "frontier",
+    "Palabras similares": "keywords",
+
+    "c_Pais": "country",
+    "Formato de código postal": "postal_code_pattern",
+    "Formato de Registro de Identidad Tributaria": "tax_id_pattern",
+    "Validación del Registro de Identidad Tributaria": "tax_id_validation",
+    "Agrupaciones": "group",
+
+    "c_Estado": "state",
+    "Nombre del estado": "name",
+
+    "c_Municipio": "municipality",
+    "c_Localidad": "locality",
+    "c_CodigoPostal": "postal_code",
+    "c_Colonia": "colony",
+
+    "Referencias del Huso Horario": "timezone",
+
+    "Nombre del asentamiento": "name",
+
+    "c_Exportacion": "export_code",
+
+    "c_FormaPago": "payment_code",
+    "Bancarizado": "bank",
+    "Número de operación": "operation_code",
+    "RFC del Emisor de la cuenta ordenante": "tax_id_sender",
+    "Cuenta Ordenante": "account_requester",
+    "Patrón para cuenta ordenante": "account_pattern",
+    "RFC del Emisor Cuenta de Beneficiario": "tax_id_receiver",
+    "Cuenta de Benenficiario": "account_receiver",
+    "Patrón para cuenta Beneficiaria": "account_receiver_pattern",
+    "Tipo Cadena Pago": "payment_type",
+    "Nombre del Banco emisor de la cuenta ordenante en caso de extranjero": "forigen_account",
+   
+    "c_Impuesto": "tax_code",
+    "Retención": "deducted",
+    "Traslado": "transferred",
+    "Local o federal": "type",
+
+    "c_ObjetoImp": "tax_type",
+
+
+    "c_Meses": "month",
+
+    "c_MetodoPago": "payment_method",
+
+    "c_Moneda": "currency",
+    "Decimales": "decimals",
+    "Porcentaje variación": "variation",
+
+    "c_Periodicidad": "partiality",
+
+    "c_RegimenFiscal": "tax_entity",
+    "Física": "person",
+    "Moral": "company",
+
+    "c_TipoFactor": "tax_factors",
+
+
+    "c_TasaOCuota": "taxes",
+    "Rango o Fijo": "tax_type",
+    "Impuesto": "tax",
+    "Factor": "factor",
+
+    "c_TipoDeComprobante": "document_type",
+    "Valor máximo": "max",
+
+    "c_TipoRelacion": "document_relation",
+
+    "c_UsoCFDI": "document_usage",
+    "Aplica para tipo persona": "person",
+    "Aplica para tipo moral": "company",
+    "Regímen Fiscal Receptor": "acceptable"
+
+}

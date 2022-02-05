@@ -216,27 +216,37 @@ function translate_headers( sheet ) {
 }
 
 function process_SAT_sheet( sheetName ) {
+	
     let sheet = workbook.Sheets[ sheetName ];
-    delete_rows( sheet, 0, ( !sheet[ 'A5' ] ? 5 : 4 ) ); // If row 5 has no value so we remove first 5 rows, otherwise 4 rows
+	if ( !sheet ) {
+		console.log( 'Sheet was not found: ' + sheetName );
+		return;
+	}	
+	delete_rows( sheet, 0, ( !sheet[ 'A5' ] ? 5 : 4 ) ); // If row 5 has no value so we remove first 5 rows, otherwise 4 rows
+
+	if ( translation ) sheet = translate_headers( sheet );
 	var range = XLSX.utils.decode_range( sheet[ '!ref' ] );
 	var i = 0;
-	for ( i = 0; i < range.e.c; i++ ) {
+	for ( i = 0; i <= range.e.c; i++ ) {
 		var col = XLSX.utils.encode_col( i );
 		let cell = sheet[ col + '1' ];
-		if ( !cell ) break;
+		if ( !cell || !cell.v || !cell.w ) {
+			i--;
+			break;
+		}
 	}
-	if ( i < ( range.e.c - 1 ) ) {
-		delete_cols( sheet, i, ( range.e.c - i + 1 ) );
+	if ( i < range.e.c ) {
+		console.log( sheetName + ' Removing last ' + ( range.e.c - i ) + ' column/s, columns: ' + i );
+		delete_cols( sheet, i + 1, range.e.c - i );
 	}
-	if ( translation ) sheet = translate_headers( sheet );
-
 	var filename = dir + '/' + ( decam ? decamelize( sheetName ) : sheetName ) + ( translation ? suffix : '' );
 	var data = null;
 	if ( format == 'json' ) {
 		data = XLSX.utils.sheet_to_json( sheet, { header: 0, blankRows: false } );
 		fs.writeFileSync( filename + '.json', JSON.stringify( data ) );
 	} else if ( format == 'csv' ) {
-		data = XLSX.utils.sheet_to_csv( sheet, { header: 1, blankRows: false } );
+		data = XLSX.utils.sheet_to_csv( sheet, { header: 1, blankrows: false, skipHidden: true, defval: ''  } );
+		//if ( data = data.replace( /,\n/gi, "\n" );
 		fs.writeFileSync( filename + '.csv', data );
 	}
 }

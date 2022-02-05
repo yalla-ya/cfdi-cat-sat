@@ -47,9 +47,9 @@ suffix - que sufijo poner a los archivos
 
 Previo a importar los datos, se debe processar en el script anterior los csv en formato SQL
 
-./import.js --host={host} --port={port} --username={username} --password={password} --db={db} --table={catalogo}
+./import.js --in={filepath} --host={host} --port={port} --username={username} --password={password} --db={db} --table={catalogo} --prefix={sat_cat} --pkey={true} 
 
 o en su caso utilizara los siguientes env parametros: DB_HOST, DB_PORT, DB_USERNAME, DB_PASSWORD, DB_NAME
 
 table - seria la tabla/catalogo a importar, ejemplor: c_aduana ( como estan nombrado los archivos en la carpeta /csv )
-
+prefix - default sat_cat - prefijo a nombre de la tabla de crear

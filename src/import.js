@@ -17,6 +17,7 @@ const DB_PASSWORD = argv[ 'password' ] ? argv[ 'password' ] : process.env.DB_PAS
 const DB_NAME = argv[ 'db' ] ? argv[ 'db' ] : process.env.DB_NAME;
 
 const pkey = argv[ 'pkey' ] ? argv[ 'pkey' ] === "true" : true;
+const truncate = argv[ 'truncate' ] ? argv[ 'truncate' ] === "true" : false;
 
 var table = argv.table ? argv.table : null;
 if ( !table ) {
@@ -26,7 +27,7 @@ if ( !table ) {
 
 var filename = argv.in ? argv.in : version + '/csv/' + table + '.sql.csv';
 if ( !filename ) {
-    console.log( "Filename is required with --in filename.xls" );
+    console.log( "Filename is required with --in filename.csv" );
     exit( 1 );
 } 
 
@@ -41,7 +42,8 @@ const connection = mysql.createConnection( {
     port: DB_PORT,
     user: DB_USERNAME,
     password: DB_PASSWORD,
-    database: DB_NAME
+    database: DB_NAME,
+    multipleStatements: true
 } );
 
 
@@ -70,10 +72,14 @@ let csvStream = fastcsv
             console.log( error );
             exit( 0 );
         }
-        console.log( "Running INSERT/REPLACE to table: " + table_name + " with " + csvData.length + " records." );
-        let query = "REPLACE INTO " + table_name + " ( `" + headers.join( '`,`') + "` ) VALUES ?;";
+        let query = "";
+        if ( !pkey || truncate ) {
+            query += "TRUNCATE " + table_name + ";";
+        }
+        console.log( "Running"  + ( query ? " " + query + " and then " : "" ) + " INSERT/REPLACE to table: " + table_name + " with " + csvData.length + " records." );
+        query += "REPLACE INTO " + table_name + " ( `" + headers.join( '`,`') + "` ) VALUES ?;";
         connection.query( query, [ csvData ], ( error, response ) => {
-            console.log( 'Done with: ' + response[ 'message' ] );
+            if ( error ) console.log( 'Error: ', error );
             exit( 0 );
         } );
     } );

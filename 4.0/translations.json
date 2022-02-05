@@ -105,6 +105,7 @@
 
     "c_TipoDeComprobante": "document_type",
     "Valor minimo": "min",
+    "Valor mínimo": "min",
     "Valor máximo": "max",
 
     "c_TipoRelacion": "document_relation",

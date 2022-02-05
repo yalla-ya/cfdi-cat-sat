@@ -45,6 +45,16 @@
     "c_CodigoPostal": "postal_code",
     "c_Colonia": "colony",
 
+    "Descripción del Huso Horario": "description",
+    "Mes_Inicio_Horario_Verano": "summer_month",
+    "Día_Inicio_Horario_Verano": "summer_day",
+    "Hora_Inicio_Horario_Verano": "summer_time",
+    "Diferencia_Horaria_Verano": "summer_diff",
+    "Mes_Inicio_Horario_Invierno": "winter_month",
+    "Día_Inicio_Horario_Invierno": "winter_day",
+    "Hora_Inicio_Horario_Invierno": "winter_time",
+    "Diferencia_Horaria_Invierno": "winter_diff",
+
     "Referencias del Huso Horario": "timezone",
 
     "Nombre del asentamiento": "name",
@@ -94,6 +104,7 @@
     "Factor": "factor",
 
     "c_TipoDeComprobante": "document_type",
+    "Valor minimo": "min",
     "Valor máximo": "max",
 
     "c_TipoRelacion": "document_relation",

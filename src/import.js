@@ -6,6 +6,7 @@ import fastcsv from 'fast-csv';
 import yargs from 'yargs'
 import { hideBin } from 'yargs/helpers';
 import { exit } from 'process';
+import Importer from 'mysql-import';
 
 const version = "4.0";
 const argv = yargs( hideBin( process.argv ) ).argv;
@@ -18,24 +19,22 @@ const DB_NAME = argv[ 'db' ] ? argv[ 'db' ] : process.env.DB_NAME;
 
 const pkey = argv[ 'pkey' ] ? argv[ 'pkey' ] === "true" : true;
 const truncate = argv[ 'truncate' ] ? argv[ 'truncate' ] === "true" : false;
+const post = argv[ 'post' ] ? argv[ 'post' ] : null;
 
 var table = argv.table ? argv.table : null;
-if ( !table ) {
-    console.log( "Table name is required with --table table" );
+if ( !table && !post ) {
+    console.log( "Table name is required with --table table or run post sql --post scriptname" );
     exit( 1 );
 } 
 
-var filename = argv.in ? argv.in : version + '/csv/' + table + '.sql.csv';
-if ( !filename ) {
-    console.log( "Filename is required with --in filename.csv" );
+var filename = !post ? ( argv.in ? argv.in : version + '/csv/' + table + '.sql.csv' ) : null;
+if ( !filename && !post ) {
+    console.log( "Filename is required with --in filename.csv or run post sql --post scriptname" );
     exit( 1 );
 } 
-
-
 
 let table_prefix = argv[ 'prefix' ] ? argv[ 'prefix' ] : 'sat_cat';
 table_prefix = table_prefix ? table_prefix + '_' : '';
-
 
 const connection = mysql.createConnection( {
     host: DB_HOST,
@@ -45,7 +44,6 @@ const connection = mysql.createConnection( {
     database: DB_NAME,
     multipleStatements: true
 } );
-
 
 let csvData = [];
 let csvStream = fastcsv
@@ -62,8 +60,9 @@ let csvStream = fastcsv
     let sql = "CREATE TABLE IF NOT EXISTS `" + table_name + "` ( ";
     for( var i = 0; i < headers.length; i++ ) {
         if ( i > 0 ) sql += ',';
-        var column_type = 'VARCHAR(255)';
-        sql += '`' + headers[ i ] + '` ' + column_type + ( i == 0 && pkey ? ' PRIMARY KEY' : '' );
+        var column_name = headers[ i ];
+        var column_type = column_name == 'keywords' ? 'TEXT' : 'VARCHAR(255)';
+        sql += '`' + column_name + '` ' + column_type + ( i == 0 && pkey ? ' PRIMARY KEY' : '' );
     }
     sql += " );"
     console.log( "Running create if no exist table: " + sql );
@@ -90,8 +89,31 @@ connection.connect( ( error ) => {
         console.error( error );
        // exit( 0 );
     } else {
-        let stream = fs.createReadStream( filename );
-        stream.pipe( csvStream );
+        if ( filename ) {
+            let stream = fs.createReadStream( filename );
+            stream.pipe( csvStream );
+        }
+        if ( post ) {
+            let sql = version + '/post/' + post + '.sql';
+            const importer = new Importer( { 
+                host: DB_HOST,
+                port: DB_PORT,
+                user: DB_USERNAME,
+                password: DB_PASSWORD,
+                database: DB_NAME,
+             } );
+             importer.import( sql ).then( () => {
+                var files_imported = importer.getImported();
+                console.log( `${files_imported.length} SQL file(s) imported.` );
+                exit( 0 );
+              } ).catch( err => {
+                console.error( err );
+                exit( 1 );
+              } );
+        }
+
+
+
     }
     //exit( 1 );
 } );

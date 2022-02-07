@@ -7,7 +7,6 @@
   "scripts": {
     "setup": "npm install",
     "init": "export $(cat .env | xargs)",
-    
     "start": "npm run process",
     "process": "npm-run-all process:json process:csv",
     "process:json": "npm-run-all process:json:*",
@@ -18,7 +17,6 @@
     "process:csv:decamelize": "./src/process.js --format=csv --decamelize=true --translate=false",
     "process:json:sat": "./src/process.js --format=json --decamelize=false --translate=false",
     "process:csv:sat": "./src/process.js --format=csv --decamelize=false --translate=false",
-    
     "import": "npm-run-all import:*",
     "import:c_pais": "./src/import.js --table=c_pais",
     "import:c_meses": "./src/import.js --table=c_meses",
@@ -45,7 +43,6 @@
     "import:c_municipio": "./src/import.js --table=c_municipio",
     "import:c_colonia": "./src/import.js --table=c_colonia --pkey=false",
     "import:c_codigo_postal": "./src/import.js --table=c_codigo_postal --pkey=false",
-
     "clean": "npm-run-all clean:*",
     "clean:json": "rm 4.0/json/*",
     "clean:csv": "rm 4.0/csv/*",
@@ -73,6 +70,7 @@
     "decamelize": "^6.0.0",
     "fast-csv": "^4.3.6",
     "mysql": "^2.18.1",
+    "mysql-import": "^5.0.21",
     "node-xlsx": "^0.21.0",
     "npm-run-all": "^4.1.5",
     "xlsx": "^0.17.5",

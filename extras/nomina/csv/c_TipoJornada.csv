@@ -1,0 +1,10 @@
+c_TipoJornada,Descripción
+01,Diurna
+02,Nocturna
+03,Mixta
+04,Por hora
+05,Reducida
+06,Continuada
+07,Partida
+08,Por turnos
+99,Otra Jornada

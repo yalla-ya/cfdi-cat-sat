@@ -22,13 +22,13 @@ if ( translation ) {
 	translation = JSON.parse( translation );	
 }
 
-var filename = argv.in ? argv.in : 'catCFDI.xls';
+var filename = argv.in ? argv.in : 'catCFDI/catCFDI.xls';
 if ( !filename ) {
     console.log( "Filename is required with --in filename.xls" );
     exit( 1 );
 } 
 
-var workbook = XLSX.readFile( version + '/catCFDI/' + filename );
+var workbook = XLSX.readFile( version + '/' + filename );
 var sheets = argv.sheet ? [ argv.sheet ] : workbook.SheetNames;
 var dir = argv.dir ? argv.dir : version + '/' + format;
 

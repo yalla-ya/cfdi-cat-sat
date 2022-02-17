@@ -1,0 +1,12 @@
+contract_type,description
+01,Contrato de trabajo por tiempo indeterminado
+02,Contrato de trabajo para obra determinada
+03,Contrato de trabajo por tiempo determinado
+04,Contrato de trabajo por temporada
+05,Contrato de trabajo sujeto a prueba
+06,Contrato de trabajo con capacitación inicial
+07,Modalidad de contratación por pago de hora laborada
+08,Modalidad de trabajo por comisión laboral
+09,Modalidades de contratación donde no existe relación de trabajo
+10,"Jubilación, pensión, retiro."
+99,Otro contrato

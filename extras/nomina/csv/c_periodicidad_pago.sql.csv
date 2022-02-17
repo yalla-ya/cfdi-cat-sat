@@ -1,0 +1,12 @@
+payment_frequency,description,start_date,end_date
+01,Diario,11/1/16,
+02,Semanal,11/1/16,
+03,Catorcenal,11/1/16,
+04,Quincenal,11/1/16,
+05,Mensual,11/1/16,
+06,Bimestral,11/1/16,
+07,Unidad obra,11/1/16,
+08,Comisión,11/1/16,
+09,Precio alzado,11/1/16,
+10,Decenal,1/19/17,
+99,Otra Periodicidad,11/1/16,

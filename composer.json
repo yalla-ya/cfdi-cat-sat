@@ -1,6 +1,13 @@
 {
     "name": "yalla-ya/cat-cfdi-sat",
     "description": "CFDI Catalogs in JSON and CSV",
+    "repositories": [
+        {
+            "type": "vcs",
+            "url": "https://github.com/yalla-ya/cat-cfdi-satp"
+        }
+    ],
+    "version": "1.0.0",
     "type": "library",
     "autoload": {
         "psr-4": {

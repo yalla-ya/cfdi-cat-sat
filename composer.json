@@ -3,6 +3,7 @@
     "description": "CFDI Catalogs in JSON and CSV",
     "version": "1.0.0",
     "type": "library",
+    "license": "MIT",   
     "autoload": {
         "psr-4": {
             "YallaYa\\CatCfdiSat\\": "src/"

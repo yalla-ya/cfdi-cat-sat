@@ -4,7 +4,7 @@
     "repositories": [
         {
             "type": "vcs",
-            "url": "https://github.com/yalla-ya/cat-cfdi-satp"
+            "url": "https://github.com/yalla-ya/cat-cfdi-sat"
         }
     ],
     "version": "1.0.0",

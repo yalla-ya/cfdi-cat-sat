@@ -1,0 +1,31 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<cfdi:Comprobante xmlns:cfdi="http://www.sat.gob.mx/cfd/3" xmlns:tfd="http://www.sat.gob.mx/TimbreFiscalDigital" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" LugarExpedicion="BENITO JUAREZ, DISTRITO FEDERAL" Moneda="MXN" NumCtaPago="8002" TipoCambio="1.00" certificado="MIIEiTCCA3GgAwIBAgIUMDAwMDEwMDAwMDAyMDI0MDc4ODcwDQYJKoZIhvcNAQEFBQAwggGVMTgwNgYDVQQDDC9BLkMuIGRlbCBTZXJ2aWNpbyBkZSBBZG1pbmlzdHJhY2nDs24gVHJpYnV0YXJpYTEvMC0GA1UECgwmU2VydmljaW8gZGUgQWRtaW5pc3RyYWNpw7NuIFRyaWJ1dGFyaWExODA2BgNVBAsML0FkbWluaXN0cmFjacOzbiBkZSBTZWd1cmlkYWQgZGUgbGEgSW5mb3JtYWNpw7NuMSEwHwYJKoZIhvcNAQkBFhJhc2lzbmV0QHNhdC5nb2IubXgxJjAkBgNVBAkMHUF2LiBIaWRhbGdvIDc3LCBDb2wuIEd1ZXJyZXJvMQ4wDAYDVQQRDAUwNjMwMDELMAkGA1UEBhMCTVgxGTAXBgNVBAgMEERpc3RyaXRvIEZlZGVyYWwxFDASBgNVBAcMC0N1YXVodMOpbW9jMRUwEwYDVQQtEwxTQVQ5NzA3MDFOTjMxPjA8BgkqhkiG9w0BCQIML1Jlc3BvbnNhYmxlOiBDZWNpbGlhIEd1aWxsZXJtaW5hIEdhcmPDrWEgR3VlcnJhMB4XDTEyMTEyMjIyMjIzN1oXDTE2MTEyMjIyMjIzN1owgcoxJDAiBgNVBAMTG0dSVVBPIEhPUkJBQ0ggREUgSURJT01BUyBTQzEkMCIGA1UEKRMbR1JVUE8gSE9SQkFDSCBERSBJRElPTUFTIFNDMSQwIgYDVQQKExtHUlVQTyBIT1JCQUNIIERFIElESU9NQVMgU0MxJTAjBgNVBC0THEdISTA0MDUyNzlHMCAvIEhPTVI1MjAzMjhLTjYxHjAcBgNVBAUTFSAvIEhPTVI1MjAzMjhITkVSVEIwMjEPMA0GA1UECxMGVU5JREFEMIGfMA0GCSqGSIb3DQEBAQUAA4GNADCBiQKBgQDbUeaqH2f6P99mU28gAZeem3macBen1DZesT3cVbcT8tb/MqxHt7zm8ByOq3B5sJ9ea9KHrwN/u74nHEBkcd+ANsp+6nsN3o/mwcZHPcLDgnm3LZBeym05NAhLR2qjIODCTdS56aSSpFHGw3OFW2/qfVkwGKc3lLkwC5VY1VWxLwIDAQABox0wGzAMBgNVHRMBAf8EAjAAMAsGA1UdDwQEAwIGwDANBgkqhkiG9w0BAQUFAAOCAQEAEK4dScr4nL9VUd64EbmR3VXcTzasdmiNdfKAcyNnvn3DEM8UK7eIfZ/3rlymcDCprdadNVLjEE5ZGzPUhqNOiTcg10tksgc3KH6a/kAf4gkPBLj0Bmx3VEUsquY4ANN2iEw64BDQKrJNjK04hRO3/reN+Cw9zRsKv9tdeY/SA38sIM7Ywc7ldAKbAEd9ShplrZ/FKrVAda0AbvpkLwWK443XQ+Pin2btwVT2c4OCLZCzwEUw1mtUHLpzulo8SnxTQsDwXCyZgJaLsi+CdnZpE6kEvz8uksWTiWzfoWlTjUxuBL/JiYuTqbatruCg+9rphSoO0eJbiim7fM+sCwSCIw==" condicionesDePago="60 DIAS" fecha="2014-09-17T17:22:29" folio="21" formaDePago="PAGO EN UNA SOLA EXHIBICION" metodoDePago="TRANSFERENCIA" noCertificado="00001000000202407887" sello="wKDrJBmenA3q4A79sXG3ZlFeqMRMIjpMyJONRquPUd2bXSeuxyE6DuHozH7LZXegJhQpb8UgyUeLPcbx5h26KxmJhqbQPWcmQ/mVagHxZrcDMZ9qSvcxmkuCRIdvbCvtQZOn6BQG5HDoTKI9wCDxcNE0Rfvy7190k75Zn/wxYoE=" serie="FT" subTotal="26030.0" tipoDeComprobante="ingreso" total="30194.8" version="3.2" xsi:schemaLocation="http://www.sat.gob.mx/cfd/3 http://www.sat.gob.mx/sitio_internet/cfd/3/cfdv32.xsd http://www.sat.gob.mx/TimbreFiscalDigital http://www.sat.gob.mx/sitio_internet/TimbreFiscalDigital/TimbreFiscalDigital.xsd">
+    <cfdi:Emisor nombre="GRUPO HORBACH DE IDIOMAS SC" rfc="GHI0405279G0">
+        <cfdi:DomicilioFiscal calle="LUZ SAVIÑON" codigoPostal="03100" colonia="DEL VALLE" estado="DISTRITO FEDERAL" municipio="BENITO JUAREZ" noExterior="13" noInterior="406" pais="MEXICO" referencia="MAGDALENA E INSURGENTES"/>
+        <cfdi:ExpedidoEn calle="LUZ SAVIÑON" codigoPostal="03100" colonia="DEL VALLE" estado="DISTRITO FEDERAL" municipio="BENITO JUAREZ" noExterior="13" noInterior="406" pais="MEXICO" referencia="MAGDALENA E INSURGENTES"/>
+        <cfdi:RegimenFiscal Regimen="REGIMEN GENERAL DE PERSONAS MORALES"/>
+    </cfdi:Emisor>
+    <cfdi:Receptor nombre="EMERSON PROCESS MANAGEMENT, S.A. DE C.V." rfc="EPM9509113G6">
+        <cfdi:Domicilio calle="CALLE 10" codigoPostal="01180" colonia="SAN PEDRO DE LOS PINOS" estado="D.F." localidad="MEXICO" municipio="ALVARO OBREGON" noExterior="145" noInterior="1er. PISO ALA ORIENTE" pais="México"/>
+    </cfdi:Receptor>
+    <cfdi:Conceptos>
+        <cfdi:Concepto cantidad="137.0" descripcion="TRADUCCIONES" importe="26030.0" noIdentificacion="TRAD-01" unidad="UN" valorUnitario="190.0"/>
+    </cfdi:Conceptos>
+    <cfdi:Impuestos totalImpuestosTrasladados="4164.8">
+        <cfdi:Traslados>
+            <cfdi:Traslado importe="4164.8" impuesto="IVA" tasa="16.0"/>
+        </cfdi:Traslados>
+    </cfdi:Impuestos>
+    <cfdi:Complemento>
+        <tfd:TimbreFiscalDigital FechaTimbrado="2014-09-17T17:25:16" UUID="94DAC997-327F-41F9-8871-F8BA605C271E" noCertificadoSAT="00001000000203220518" selloCFD="wKDrJBmenA3q4A79sXG3ZlFeqMRMIjpMyJONRquPUd2bXSeuxyE6DuHozH7LZXegJhQpb8UgyUeLPcbx5h26KxmJhqbQPWcmQ/mVagHxZrcDMZ9qSvcxmkuCRIdvbCvtQZOn6BQG5HDoTKI9wCDxcNE0Rfvy7190k75Zn/wxYoE=" selloSAT="lrI82hVwxa+Oa5WtmjiTs+FxEC2ci/eryaNWKL/6WmyEgaMvoGF781htF7cR91hVJ2/vqQ/TwtoIb9TW09IVHQK6ZkJsBXwntmuogaW1Hv8yRdE48dte7AhcdPmAV/d/V6iG388lu3NAJ5hb5tR93C+Z6QR4ddXvanaFbKUjWHA=" version="1.0" xsi:schemaLocation="http://www.sat.gob.mx/TimbreFiscalDigital http://www.sat.gob.mx/TimbreFiscalDigital/TimbreFiscalDigital.xsd"/>
+    </cfdi:Complemento>
+    <cfdi:Addenda>
+        <Generales>
+            <NumProveedor>150097935</NumProveedor>
+            <Moneda>MXN</Moneda>
+            <NumOrdenCompra>4110072534</NumOrdenCompra>
+            <NumRecepcionr>27420</NumRecepcionr>
+            <UsoFuturo/>
+        </Generales>
+    </cfdi:Addenda>
+</cfdi:Comprobante>

@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:emp="http://edixcfdisecure.ekomercio.com/esquemas" xmlns:xs="http://www.w3.org/2001/XMLSchema" targetNamespace="http://edixcfdisecure.ekomercio.com/esquemas" elementFormDefault="qualified" attributeFormDefault="unqualified">
+	<xs:element name="Generales">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="NumProveedor" type="xs:string"/>
+				<xs:element name="Moneda" type="xs:string"/>
+				<xs:element name="NumOrdenCompra" type="xs:unsignedShort"/>
+				<xs:element name="NumRecepcionr" type="xs:string"/>
+				<xs:element name="UsoFuturo" type="xs:string"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+</xs:schema>

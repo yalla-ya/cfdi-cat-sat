@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- edited with XMLSpy v2011 sp1 (x64) (http://www.altova.com) by Ferram (Personal) -->
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified" attributeFormDefault="unqualified" id="InfoAddenda" xml:lang="es-mx">
+	<xs:element name="ASONIOSCOC">
+		<xs:annotation>
+			<xs:documentation>Addenda NIOSCOC Productos No inventariables y ordenes de servicio con orden de compra</xs:documentation>
+		</xs:annotation>
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="Partidas">
+					<xs:complexType>
+						<xs:sequence>
+							<xs:element name="Partida" maxOccurs="unbounded">
+								<xs:complexType>
+									<xs:attribute name="noPartida" use="required">
+										<xs:annotation>
+											<xs:documentation>Número de Partida</xs:documentation>
+										</xs:annotation>
+										<xs:simpleType>
+											<xs:restriction base="xs:int"/>
+										</xs:simpleType>
+									</xs:attribute>
+									<xs:attribute name="ivaAcreditable" use="required">
+										<xs:annotation>
+											<xs:documentation>Importe del IVA acreditable</xs:documentation>
+										</xs:annotation>
+										<xs:simpleType>
+											<xs:restriction base="xs:decimal"/>
+										</xs:simpleType>
+									</xs:attribute>
+									<xs:attribute name="ivaDevengado" use="required">
+										<xs:annotation>
+											<xs:documentation>Importe del IVA devengado</xs:documentation>
+										</xs:annotation>
+										<xs:simpleType>
+											<xs:restriction base="xs:decimal"/>
+										</xs:simpleType>
+									</xs:attribute>
+									<xs:attribute name="Otros" use="required">
+										<xs:simpleType>
+											<xs:restriction base="xs:string"/>
+										</xs:simpleType>
+									</xs:attribute>
+								</xs:complexType>
+							</xs:element>
+						</xs:sequence>
+					</xs:complexType>
+				</xs:element>
+			</xs:sequence>
+			<xs:attribute name="tipoProveedor" use="required">
+				<xs:annotation>
+					<xs:documentation>Indica el tipo de proveedor, proporcionad por Asofarma</xs:documentation>
+				</xs:annotation>
+				<xs:simpleType>
+					<xs:restriction base="xs:int">
+						<xs:totalDigits value="2"/>
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:attribute>
+			<xs:attribute name="noProveedor" use="required">
+				<xs:annotation>
+					<xs:documentation>Numero de Proveedor Asofarma</xs:documentation>
+				</xs:annotation>
+				<xs:simpleType>
+					<xs:restriction base="xs:string">
+						<xs:maxLength value="10"/>
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:attribute>
+			<xs:attribute name="serie" use="required">
+				<xs:annotation>
+					<xs:documentation>Atributo opcional para precisar la serie para control interno del contribuyente. Este atributo acepta una cadena de caracteres alfabéticos de 1 a 25 caracteres sin incluir caracteres acentuados.</xs:documentation>
+				</xs:annotation>
+				<xs:simpleType>
+					<xs:restriction base="xs:string">
+						<xs:minLength value="1"/>
+						<xs:maxLength value="25"/>
+						<xs:whiteSpace value="collapse"/>
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:attribute>
+			<xs:attribute name="folio" use="required">
+				<xs:annotation>
+					<xs:documentation>Atributo opcional para control interno del contribuyente que acepta un valor numérico entero superior a 0 que expresa el folio del comprobante.</xs:documentation>
+				</xs:annotation>
+				<xs:simpleType>
+					<xs:restriction base="xs:string">
+						<xs:minLength value="1"/>
+						<xs:maxLength value="20"/>
+						<xs:whiteSpace value="collapse"/>
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:attribute>
+			<xs:attribute name="ordenCompra" use="required">
+				<xs:annotation>
+					<xs:documentation>Número de Orden de compra Asofarma</xs:documentation>
+				</xs:annotation>
+				<xs:simpleType>
+					<xs:restriction base="xs:string">
+						<xs:maxLength value="12"/>
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:attribute>
+		</xs:complexType>
+	</xs:element>
+</xs:schema>

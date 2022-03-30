@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<cfdi:Comprobante xsi:schemaLocation="http://www.sat.gob.mx/cfd/3 http://www.sat.gob.mx/sitio_internet/cfd/3/cfdv32.xsd" version="3.2" serie="TFA" folio="1022975" fecha="2014-07-19T10:17:27" sello="N9suII5ByueoQTGIGKhjYSjF84Ykz8QrU2QP+tgZT5/VVkqHvYj5bMvoeWyGF0/A861xxMTOkYDyDVQEkCP8uSe4K1Y114R2KJRxLLOmoVoNTdZxTFiKGW8BVZG9F3QhmBG/DuEw0ny0Kdqbict97YOgN8ARekIdXn7NWDp7jwA=" formaDePago="PAGO EN UNA SOLA EXHIBICION" noCertificado="00001000000201742687" certificado="MIIEcTCCA1mgAwIBAgIUMDAwMDEwMDAwMDAyMDE3NDI2ODcwDQYJKoZIhvcNAQEFBQAwggGVMTgwNgYDVQQDDC9BLkMuIGRlbCBTZXJ2aWNpbyBkZSBBZG1pbmlzdHJhY2nDs24gVHJpYnV0YXJpYTEvMC0GA1UECgwmU2VydmljaW8gZGUgQWRtaW5pc3RyYWNpw7NuIFRyaWJ1dGFyaWExODA2BgNVBAsML0FkbWluaXN0cmFjacOzbiBkZSBTZWd1cmlkYWQgZGUgbGEgSW5mb3JtYWNpw7NuMSEwHwYJKoZIhvcNAQkBFhJhc2lzbmV0QHNhdC5nb2IubXgxJjAkBgNVBAkMHUF2LiBIaWRhbGdvIDc3LCBDb2wuIEd1ZXJyZXJvMQ4wDAYDVQQRDAUwNjMwMDELMAkGA1UEBhMCTVgxGTAXBgNVBAgMEERpc3RyaXRvIEZlZGVyYWwxFDASBgNVBAcMC0N1YXVodMOpbW9jMRUwEwYDVQQtEwxTQVQ5NzA3MDFOTjMxPjA8BgkqhkiG9w0BCQIML1Jlc3BvbnNhYmxlOiBDZWNpbGlhIEd1aWxsZXJtaW5hIEdhcmPDrWEgR3VlcnJhMB4XDTEyMDgxMzE4NDUyMFoXDTE2MDgxMzE4NDUyMFowgbIxHDAaBgNVBAMTE1NBTkJPUk4gSEVSTUFOT1MgU0ExHDAaBgNVBCkTE1NBTkJPUk4gSEVSTUFOT1MgU0ExHDAaBgNVBAoTE1NBTkJPUk4gSEVSTUFOT1MgU0ExJTAjBgNVBC0THFNIRTE5MDYzMFYzNyAvIFJPR0w2NDA0MDVLVzMxHjAcBgNVBAUTFSAvIFJPR0w2NDA0MDVIREZTTVMwODEPMA0GA1UECxMGTUFUUklaMIGfMA0GCSqGSIb3DQEBAQUAA4GNADCBiQKBgQDubrOT82PT8Wdsh3os2mTAMSEEhzLyI2Bbxxi2HDG6TgTsVUQnVyjn5h5qZcrb9hh6/TUCZn6nMdvvT54fQtbUMyTETNO6Zyveco58m0f9BU8Rq6IdeOXpIFL8RA3ua4me7M4zayJdXokuEOOox5ZXFLf65jJWwelhELwmJFOeqwIDAQABox0wGzAMBgNVHRMBAf8EAjAAMAsGA1UdDwQEAwIGwDANBgkqhkiG9w0BAQUFAAOCAQEAhwfJAv/eT6p+MHEhN4lh5CKLDrOHHEsTES06AktcojPSEYlnRoCPpCxzi/Vqnc6Xmyzd7D7fOGwzdQU5Ukytzu+yvU2lvn8Jyz1n1DIH0ITBLv3kKLRZtFmrY98zjXwXAv7zuD+jfKUB5bbDRbHg/l7h1Mw0GNOJfO081sGzuyNzEXPqRrlzbURo1gY9YQ0IXmmWS4XGqSmcrP4QxQ+bJ9vTTsL1g7wiIQpGNzsbDP0psvlVAxKx0h135lrPfF+PmBRFCWv04VVyzi1OgC33Ar9LWC8xGqN1VCP9JalR2SrESxQTDYN98E1lpM/qdZNuPhHKtB0uNPBok6hykojWew==" subTotal="257.76" Moneda="MXN" total="299" tipoDeComprobante="ingreso" metodoDePago="EFECTIVO" LugarExpedicion="BOKER" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:cfdi="http://www.sat.gob.mx/cfd/3">
+	<cfdi:Emisor rfc="SHE190630V37" nombre="SANBORN HERMANOS, S.A.">
+		<cfdi:DomicilioFiscal calle="LAGO ZURICH" noExterior="245" noInterior="EDIFICIO PRESA FALCON PISO 7" colonia="GRANADA AMPLIACION" municipio="MIGUEL HIDALGO" estado="D.F." pais="MEXICO" codigoPostal="11529"/>
+		<cfdi:ExpedidoEn calle="ISABEL LA CATOLICA" noExterior="35" colonia="CENTRO" municipio="DELEGACION CUAUHTEMOC" estado="D.F." pais="MEXICO" codigoPostal="06000"/>
+		<cfdi:RegimenFiscal Regimen="REGIMEN GENERAL DE LAS PERSONAS MORALES"/>
+	</cfdi:Emisor>
+	<cfdi:Receptor rfc="RAHF620123BQ6" nombre="FERNANDO RAMOS HERNANDEZ">
+		<cfdi:Domicilio calle="AMIXTLI" noExterior="LT.9 MZ. 346" colonia="BARRIO DE PLATEROS" municipio="CHIMALHUACAN" estado="ESTADO DE MEXICO" pais="MEXICO" codigoPostal="56330"/>
+	</cfdi:Receptor>
+	<cfdi:Conceptos>
+		<cfdi:Concepto cantidad="1" unidad="PZA" noIdentificacion="75062454" descripcion="FTG H100381B-250 RUB ARM COMP" valorUnitario="257.76" importe="257.76"/>
+	</cfdi:Conceptos>
+	<cfdi:Impuestos totalImpuestosRetenidos="0" totalImpuestosTrasladados="41.24">
+		<cfdi:Traslados>
+			<cfdi:Traslado impuesto="IVA" tasa="16" importe="41.24"/>
+		</cfdi:Traslados>
+	</cfdi:Impuestos>
+	<cfdi:Complemento xsi:schemaLocation="">
+		<tfd:TimbreFiscalDigital version="1.0" UUID="58ea9382-0e3b-4aaf-9701-d8587404b4f1" FechaTimbrado="2014-07-19T10:20:11" selloCFD="N9suII5ByueoQTGIGKhjYSjF84Ykz8QrU2QP+tgZT5/VVkqHvYj5bMvoeWyGF0/A861xxMTOkYDyDVQEkCP8uSe4K1Y114R2KJRxLLOmoVoNTdZxTFiKGW8BVZG9F3QhmBG/DuEw0ny0Kdqbict97YOgN8ARekIdXn7NWDp7jwA=" noCertificadoSAT="00001000000203092957" selloSAT="FazVhqBXiFha0rDQhbAGADn51vynjDA7QucetAbvaugy7WuriAvFoBGXMSltiAPz/M5SmNF6JXqWdQO0jKmZu+RicKKFVMXI0FmLJySZVr6x7tu+dz6HOlxXl/YM8C74CoYXO9okNcnee0qIQrD1353B6YdxPh1Xzsas9MJdrqg=" xsi:schemaLocation="http://www.sat.gob.mx/TimbreFiscalDigital http://www.sat.gob.mx/TimbreFiscalDigital/TimbreFiscalDigital.xsd" xmlns:tfd="http://www.sat.gob.mx/TimbreFiscalDigital"/>
+	</cfdi:Complemento>
+	<cfdi:Addenda>
+		<ASONIOSCOC tipoProveedor="2" folio="1022975" ordenCompra="124" noProveedor="test" serie="TFA">
+			<Partidas>
+			<Partida ivaDevengado="16.00" ivaAcreditable="8.00" noPartida="1" Otros="otrox"/>
+			</Partidas>
+		</ASONIOSCOC>
+	</cfdi:Addenda>
+</cfdi:Comprobante>

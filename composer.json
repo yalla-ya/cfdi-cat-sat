@@ -1,20 +1,19 @@
 {
-    "name": "yalla-ya/cat-cfdi-sat",
+    "name": "yalla-ya/cfdi-cat-sat",
     "description": "CFDI Catalogs in JSON and CSV fetched from SAT and prepared for easy digital invoice",
     "keywords": [ "cfdi", "catalog", "sat", "digital invoice", "catcfdi", "cadenaoriginal", "php", "node" ],
-    "version": "1.0.0",
     "type": "library",
     "license": "MIT",   
-    "autoload": {
-        "psr-4": {
-            "CFDICAT\\": "src/"
-        }
-    },
     "authors": [
         {
             "name": "Ido Kobelkowsky",
             "email": "ido@yalla-ya.com"
         }
     ],
-    "require": {}
+    "require": {},
+    "autoload": {
+        "psr-4": {
+            "CFDICAT\\": "src/"
+        }
+    }
 }

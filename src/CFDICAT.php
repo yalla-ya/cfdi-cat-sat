@@ -14,18 +14,18 @@ namespace CFDICAT;
 
 class CFDICAT {
 
+    public $version = '4.0';
+
     public static function check( $value, $catalog, $return = true, $version = null ) {
-        if ( $version == null ) $version = $_ENV[ 'CFDI_VERSION' ];
+        if ( $version == null ) $version = isset( $_ENV[ 'CFDI_VERSION' ] ) ? $_ENV[ 'CFDI_VERSION' ] : self::$version ;
         $file = dirname( __FILE__ ) . '/../' . $version . '/json/' . self::decamelize( $catalog ) .'.t.json';
         $catalog = json_decode( file_get_contents( $file ), true );
+        $keys = array_keys( $catalog[ 0 ] );
         if ( $return === true ) {
-            $return = array_keys( $catalog[ 0 ] )[ 0 ];
+            $return = $keys[ 0 ];
         }
-        $keys = array_column( $catalog, $return );
-        if ( !count( $keys ) ) return( null );
-        $key = array_search( $value, $keys );
-        if ( $key === false ) return( null );
-        return( $catalog[ $key ][ $return ] );
+        $needle = self::find( $catalog, $value, $keys[ 0 ], $keys[ 1 ] );
+        return( $needle[ $return ] );
     }
 
 
@@ -33,4 +33,29 @@ class CFDICAT {
         return( str_replace( '__', '_', ltrim( strtolower( preg_replace( '/[A-Z]([A-Z](?![a-z]))*/', '_$0', $string ) ), '_' ) ) );
     }
     
+    public static function find( $array, $value, $field1 = null, $field2 = null ) {
+        foreach ( $array as $indx => $values ) {
+            if ( $field1 == null && $field2 == null ){
+                if ( $index == $indx ) return( $values );
+            }
+            if ( $field1 
+                && ( ( is_numeric( $values[ $field1 ] ) &&
+                    $values[ $field1 ] == $value
+                    ) 
+                    || strtolower( trim( $values[ $field1 ] ) ) == strtolower( trim( $value ) )
+                ) ) {
+                return( $values );
+            }
+            if ( $field2 
+                && ( ( is_numeric( $values[ $field2 ] ) &&
+                    $values[ $field2 ] == $value
+                    ) 
+                    || strtolower( trim( $values[ $field2 ] ) ) == strtolower( trim( $value ) )
+                ) ) {
+                return( $values );
+            }
+        }
+        return( false );
+    }
+
 }

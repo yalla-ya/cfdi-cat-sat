@@ -1,7 +1,5 @@
 <?php
 
-declare(strict_types=1);
-
 /**
  * Original Code by yalla ya! (c) 2008 - 2022
  * All Rights Reserved

@@ -16,12 +16,14 @@ class CFDICAT {
 
     public $version = '4.0';
 
+
     public static function check( $value, $catalog, $return = true, $version = null ) {
         if ( $version == null ) $version = isset( $_ENV[ 'CFDI_VERSION' ] ) ? $_ENV[ 'CFDI_VERSION' ] : self::$version ;
         $file = dirname( __FILE__ ) . '/../' . $version . '/json/' . self::decamelize( $catalog ) .'.t.json';
         $catalog = json_decode( file_get_contents( $file ), true );
         $keys = array_keys( $catalog[ 0 ] );
         if ( $return !== true && is_numeric( $return ) ) $return = $keys[ $return ];
+        if ( $return === 'value' ) $return = $keys[ 1 ];
         $needle = self::find( $catalog, $value, $keys[ 0 ], $keys[ 1 ] );
         return( $return === 'both' 
             ? $needle[ $keys[ 0 ] ] . ' ' . $needle[ $keys[ 1 ] ] 

@@ -105,6 +105,24 @@ CREATE VIEW `vtiger_exportation` AS ( SELECT
 	NULL AS `color`
 FROM `sat_cat_c_exportacion` ); 
 
+
+CREATE VIEW `vtiger_months` AS ( SELECT 
+	CAST( `month` AS UNSIGNED ) AS `monthsid`,
+	`description` AS `months`,
+	CAST( `month` AS UNSIGNED ) AS `sortorderid`,
+	1 AS `presence`,
+	NULL AS `color`
+FROM `sat_cat_c_meses` );
+
+
+CREATE VIEW `vtiger_periodicity` AS ( SELECT 
+	CAST( `partiality` AS UNSIGNED ) AS `periodicityid`,
+	`description` AS `periodicity`,
+	CAST( `partiality` AS UNSIGNED ) AS `sortorderid`,
+	1 AS `presence`,
+	NULL AS `color`
+FROM `sat_cat_c_periodicidad` );
+
 UPDATE vtiger_classifications, vtiger_classificationscf, sat_cat_c_clave_prod_serv
 	SET vtiger_classifications.title = sat_cat_c_clave_prod_serv.description,
 		vtiger_classifications.tags = sat_cat_c_clave_prod_serv.keywords,

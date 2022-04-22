@@ -97,6 +97,13 @@ CREATE VIEW `vtiger_pediment_code` AS ( SELECT
 	NULL AS `color`
 FROM `sat_cat_c_exportacion` ); 
 
+CREATE VIEW `vtiger_exportation` AS ( SELECT 
+	CAST( `export_code` AS UNSIGNED ) AS `exportationid`,
+	`description` AS `exportation`,
+	CAST( `export_code` AS UNSIGNED ) AS `sortorderid`,
+	1 AS `presence`,
+	NULL AS `color`
+FROM `sat_cat_c_exportacion` ); 
 
 UPDATE vtiger_classifications, vtiger_classificationscf, sat_cat_c_clave_prod_serv
 	SET vtiger_classifications.title = sat_cat_c_clave_prod_serv.description,

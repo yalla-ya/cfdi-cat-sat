@@ -21,11 +21,11 @@ class CFDICAT {
         $file = dirname( __FILE__ ) . '/../' . $version . '/json/' . self::decamelize( $catalog ) .'.t.json';
         $catalog = json_decode( file_get_contents( $file ), true );
         $keys = array_keys( $catalog[ 0 ] );
-        if ( $return === true ) {
-            $return = $keys[ 0 ];
-        }
+        if ( $return !== true && is_numeric( $return ) ) $return = $keys[ $return ];
         $needle = self::find( $catalog, $value, $keys[ 0 ], $keys[ 1 ] );
-        return( $needle[ $return ] );
+        return( $return === 'both' 
+            ? $needle[ $keys[ 0 ] ] . ' ' . $needle[ $keys[ 1 ] ] 
+            : $needle[ $return === true ? $keys[ 0 ] : $return ] );
     }
 
 

@@ -123,6 +123,15 @@ CREATE VIEW `vtiger_periodicity` AS ( SELECT
 	NULL AS `color`
 FROM `sat_cat_c_periodicidad` );
 
+
+CREATE VIEW `vtiger_taxable` AS ( SELECT 
+	CAST( `tax_type` AS UNSIGNED ) AS `taxableid`,
+	`description` AS `taxable`,
+	CAST( `tax_type` AS UNSIGNED ) AS `sortorderid`,
+	1 AS `presence`,
+	NULL AS `color`
+FROM `sat_cat_c_objeto_imp` );
+
 UPDATE vtiger_classifications, vtiger_classificationscf, sat_cat_c_clave_prod_serv
 	SET vtiger_classifications.title = sat_cat_c_clave_prod_serv.description,
 		vtiger_classifications.tags = sat_cat_c_clave_prod_serv.keywords,
